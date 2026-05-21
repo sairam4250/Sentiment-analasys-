@@ -1,0 +1,26 @@
+# Git
+.git
+.gitignore
+.github
+.devcontainer
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+venv/
+.venv/
+env/
+.env
+
+# Local dataset (large)
+dataset/IMDB Dataset.csv
+
+# Docker & local scripts
+run_docker.ps1
+run_docker.sh
+docker-compose.yml
+.dockerignore

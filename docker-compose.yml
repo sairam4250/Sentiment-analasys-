@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    image: sentiment-analysis-app:latest
+    container_name: sentiment-analysis-web
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./models:/app/models
+      - ./dataset:/app/dataset
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    restart: always

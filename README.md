@@ -72,16 +72,37 @@ Your browser will open automatically at `http://localhost:8501`.
 
 ---
 
-## ☁️ Deployment Steps (Streamlit Cloud)
+## 🐳 Local Deployment (Docker)
 
-To deploy this project for free on the internet and add it to your resume:
-1. Initialize a Git repository in this folder and push your code to a public GitHub repository. (Exclude the large `IMDB Dataset.csv` via `.gitignore`).
+This project contains Docker configurations to run the application in a lightweight container.
+
+### Option A: Using Docker Compose (Recommended)
+Build and start the application in one command:
+```bash
+docker compose up -d
+```
+The application will be available at `http://localhost:8501`.
+
+### Option B: Using Helper Scripts
+- **Windows (PowerShell):** Run `.\run_docker.ps1`
+- **Linux/macOS (Bash):** Run `chmod +x run_docker.sh && ./run_docker.sh`
+
+---
+
+## ☁️ Cloud Deployment Steps
+
+### 1. Streamlit Community Cloud
+To deploy this project for free on the internet:
+1. Push your local repository to a public GitHub repository.
 2. Go to [Streamlit Community Cloud](https://share.streamlit.io/) and sign in with GitHub.
-3. Click on **"New app"**.
-4. Select your repository and branch.
-5. Set the "Main file path" to `app.py`.
-6. Click **"Deploy"**.
-In a few minutes, your application will be live globally!
+3. Click on **"New app"**, select your repository, branch, and set the "Main file path" to `app.py`.
+4. Click **"Deploy"**.
+
+### 2. Docker-based Deployments (Render / Railway / Hugging Face Spaces)
+Because the project includes a `Dockerfile`, you can easily deploy it on any container-friendly platform:
+- **Render:** Create a new **Web Service**, connect your GitHub repo, select **Docker** as the runtime, and Render will build and deploy the container automatically.
+- **Hugging Face Spaces:** Create a new Space, select **Docker** as the SDK, and push your repository to Hugging Face.
+- **Railway:** Create a new service, connect your GitHub repo, and Railway will automatically detect the `Dockerfile` and deploy the service.
 
 ---
 
